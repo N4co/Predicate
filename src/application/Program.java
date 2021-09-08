@@ -16,15 +16,15 @@ public class Program {
 		list.add(new Product("Dvd", 40.0));
 		list.add(new Product("Chair", 840.0));
 
-		double min = 100.0;
-
-		list.removeIf(p -> p.getPrice() >= min);
-
-		for (Product p : list) {
-			System.out.println(p);
+		double factor = 1.1;
+	
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
+		
+		list.forEach(System.out::println);
+	
 
 		}
 
 	}
 
-}
+
